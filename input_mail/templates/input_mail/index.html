@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="mx-auto w-50 p-5">
+        <h3 style="text-align:center;">Введите e-mail:</h3>
+        <form action="{% url 'input_mail:index' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+{% endblock %}
